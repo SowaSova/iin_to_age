@@ -1,6 +1,6 @@
 from datetime import datetime as dt
+
 from django.core.exceptions import ValidationError
-from django.http import JsonResponse
 from rest_framework import serializers
 
 from .models import Person
@@ -8,6 +8,7 @@ from .models import Person
 
 class PersonaSerializer(serializers.ModelSerializer):
     age = serializers.SerializerMethodField()
+
     class Meta:
         model = Person
         fields = ("iin", "age")
@@ -17,8 +18,7 @@ class PersonaSerializer(serializers.ModelSerializer):
         if not value.isdigit():
             raise ValidationError("Only digits!")
         return value
-    
-    
+
     def get_age(self, obj):
         current_day = dt.now().day
         current_month = dt.now().month
@@ -31,6 +31,6 @@ class PersonaSerializer(serializers.ModelSerializer):
             birth_month > current_month
             or current_month == birth_month
             and current_day < birth_day
-            ):
+        ):
             age -= 1
         return age

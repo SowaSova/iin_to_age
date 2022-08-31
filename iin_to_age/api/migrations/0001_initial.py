@@ -8,15 +8,30 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Person',
+            name="Person",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('iin', models.CharField(max_length=12, unique=True, validators=[api.models.validate_length], verbose_name='IIN')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "iin",
+                    models.CharField(
+                        max_length=12,
+                        unique=True,
+                        validators=[api.models.validate_length],
+                        verbose_name="IIN",
+                    ),
+                ),
             ],
         ),
     ]

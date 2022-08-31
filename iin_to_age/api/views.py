@@ -8,4 +8,3 @@ class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all()
     serializer_class = PersonaSerializer
     lookup_field = "iin"
-    
