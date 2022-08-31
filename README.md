@@ -6,7 +6,6 @@
 
 ```
 git clone git@github.com:SowaSova/iin_to_age.git
-
 ```
 Войти в папку проекта
 
@@ -21,7 +20,7 @@ python3 -m venv venv
 ```
 
 ```
-source env/bin/activate
+source venv/bin/activate
 ```
 
 Установить зависимости из файла requirements.txt:
